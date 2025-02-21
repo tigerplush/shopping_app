@@ -1,0 +1,5 @@
+.weekdays-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* This creates two equal-width columns */
+    gap: 20px; /* Optional: Adjust the spacing between the columns */
+}

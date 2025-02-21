@@ -1,0 +1,20 @@
+@if(recipe !== undefined) {
+
+<h1>{{ recipe.title }} <button mat-icon-button (click)="onDelete()"><mat-icon>delete</mat-icon></button></h1>
+
+<div>
+    <mat-form-field>
+        <mat-label>Ingredient name</mat-label>
+        <input matInput #ingredientInput type="text" placeholder="Add a recipe" />
+    </mat-form-field>
+    <button mat-button (click)="addIngredient(ingredientInput)">Add</button>
+</div>
+
+<mat-list>
+    @for(ingredient of ingredients; track ingredient) {
+    <mat-list-item>{{ ingredient.title }}
+        <button mat-icon-button
+            (click)="deleteIngredient(ingredient.id)"><mat-icon>delete</mat-icon></button></mat-list-item>
+    }
+</mat-list>
+}

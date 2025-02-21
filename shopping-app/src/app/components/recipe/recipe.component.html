@@ -1,0 +1,11 @@
+<h1>Recipes</h1>
+<div>
+    <mat-form-field>
+        <mat-label>Recipe name</mat-label>
+        <input matInput #recipeInput type="text" placeholder="Add a recipe" />
+    </mat-form-field>
+    <button mat-button (click)="addRecipe(recipeInput)">Add</button>
+</div>
+@for(recipe of recipes; track recipe) {
+<button mat-button [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</button>
+}

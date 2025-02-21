@@ -1,0 +1,23 @@
+<h1>Shopping List</h1>
+<div>
+    <mat-form-field>
+        <mat-label>Add an item</mat-label>
+        <input matInput #todoInput>
+    </mat-form-field>
+    <button mat-button (click)="addTodo(todoInput)">Add</button>
+    <button mat-icon-button (click)="deleteAll()"><mat-icon>delete</mat-icon></button>
+</div>
+<mat-list role="list">
+    @for (item of items; track $index) {
+    <mat-list-item role="listitem">
+        <mat-checkbox></mat-checkbox>
+        
+        <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input  type="number" matInput [value]="item.amount">
+        </mat-form-field>
+        <span>{{ item.title }}</span>
+        <button mat-icon-button (click)="deleteItem(item.id)"><mat-icon>delete</mat-icon></button>
+    </mat-list-item>
+    }
+</mat-list>

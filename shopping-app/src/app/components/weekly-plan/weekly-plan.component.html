@@ -1,0 +1,14 @@
+<div class="weekdays-container">
+    @for (weekday of weekdays; track $index) {
+    <mat-form-field>
+        <mat-label>{{ weekday }}</mat-label>
+        <mat-select (selectionChange)="onSelectionChange($index, $event)">
+            <mat-option></mat-option>
+            @for(recipe of recipes; track recipe) {
+            <mat-option [value]="recipe">{{recipe.title}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    }
+</div>
+<button mat-button (click)="onAddIngredients()">Add ingredients to list</button>
